@@ -1,0 +1,187 @@
+\documentclass[twocolumn,letterpaper,spanish]{revtex4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{bm}
+%\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{subfig}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\usepackage[spanish,es-tabla]{babel}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\beq}{\begin{eqnarray}}
+%\newcommand{\tcancel}[1]{\leavevmode\cancel{#1}}
+\spanishdecimal{.}
+
+\begin{document}
+
+\title{Funci\'on de correlaci\'on de Galaxias Luminosas Rojas en SDSS}
+\author{Constanza Osses Guerra}
+\email{conyosses@gmail.com}
+\affiliation{Profesor: Crist\'obal Sif\'on}
+\affiliation{Doctorado en Ciencias F\'isicas, Pontificia Universidad Cat\'olica de Valpara\'{\i}so, Chile}
+
+\begin{abstract}
+ La funci\'on de correlaci\'on describe de qu\'e manera est\'an distribuidas las galaxias en el Universo. Es por esto, que en este trabajo se pretende obtener la funci\'on de correlaci\'on de galaxias luminosas rojas seleccionadas del SDSS para redshifts de hasta z$\sim$ 2 usando el estimador Landy-Szalay. Adem\'as se pretende obtener la funci\'on de correlaci\'on como una suma de dos funciones: funci\'on de un halo (1h) y funci\'on de dos halos (2h).%Las muestras de Galaxias Luminosas Rojas (\textit{LRG}) seleccionadas del SDSS, z~2
+\end{abstract}
+
+
+\maketitle
+
+\section{Introducci\'on}
+
+El estudio de estructuras a gran escala del Universo es una herramienta muy importante en la cosmolog\'ia y, en especial el Sloan Digital Sky Survey \cite{anderson} ha sido de gran importancia para comprender esta aspecto.
+Gracias al cat\'alogo proporcionado por el SDSS que obtiene espectros de muchos objetos simult\'aneamente gracias a que los espectr\'grafos est\'an conectados por fibra \'optica a un plato de aluminio en el plano focal del telescopio. Adem\'as utiliza 5 filtros fotom\'etricos para obtener datos y que pretende mapear un cuarto del cielo, es posible estudiar millones de LRG y miles de qu\'asares.
+Las Galaxias Luminosas Rojas (LRG) son galaxias masivas de tipo temprano compuestas en su mayor\'ia por estrellas viejas, y son consideradas como las muestras de galaxias mayor estudiadas y entendidas. Este tipo de galaxias posee diversas caracter\'isticas, tales como que su espectro es uniforme, pr\'acticamente no poseen l\'ineas de emisi\'on, sus l\'ineas de absorci\'on profundas, son las galaxias que est\'an m\'as agrupadas y por supuesto, son muy luminosas. Los datos de estas galaxias a partir del SDSS han sido usados para m\'ultiples prop\'ositos, como el estudio de lentes d\'ebiles \cite{mandelbaum}, detecci\'on de oscilaciones bari\'onicas \cite{Eisenstein2005}, \cite{kazin} y estudio de la distorsi\'on en el espacio de redshift \cite{cabre}, \cite{reid}, \cite{samushia}.
+
+Debido a la gran luminosidad de las galaxias rojas, son conocidas por entregar informaci\'on sobre c\'omo est\'an distribuidas las galaxias a trav\'es de la funci\'on de correlaci\'on.
+
+
+\subsection{Modelo del Halo}
+
+Para predecir e interpretar la esta\'isitica de materia oscura se emplea el formalismo del modelo del halo. Este formalismo es importante debido a que se obtienen c\'alculos anal\'iticos de la aglomeraci\'on de materia oscura que tambi\'en se puede extender a poblaciones de galaxias.
+
+El modelo del halo se basa en diversas suposiciones. Se asume que toda la materia oscura est\'a concentrada en halos del mismo tama\~no as\'i entonces se puede conocer la distribuci\'on de materia oscura en funci\'on de la funci\'on de masa de los halos (Seth Tormen  1999). Tambi\'en se asume que la aglomeraci\'on del halo es independiente de las propiedades mismas del halo, a excpeci\'on de la masa.
+
+Una de las aplicaciones del modelo del halo es obtener la funci\'on de correlaci\'on de dos puntos
+
+\subsection{Funci\'on de Correlaci\'on}
+
+La funci\'on de correlaci\'on est\'a dada por
+\begin{equation}
+\xi(r)=\xi_{1h}(r)+\xi_{2h}(r)
+\end{equation}
+
+donde el t\'ermino $\xi_{1h}(r)$ se debe a la contribuci\'on de los elementos dentro del mismo halo y  el t\'ermino $\xi_{2h}(r)$ es la contribuci\'on de elementos de halos diferentes.
+Podemos escribir la contribuci\'on del segundo t\'ermino como
+
+\begin{equation}
+\xi_{gg,2h}=b^2_{gal}\,\xi_{mm}(r)
+\end{equation}
+
+Y sabemos adem\'as que la funci\'on de correlaci\'on se puede escribir en t\'erminos de una ley de potencia
+
+\begin{equation}
+\xi(r)=\left(\frac{r}{r_0}\right)^{-\gamma}
+\end{equation}
+
+\section{Datos}
+\subsection{C\'odigo de b\'usqueda}
+Los datos de las galaxias fueron obtenidos del cat\'alogo m\'as reciente del SDSS (DR16). Este cat\'alogo es la \'ultima actualizaci\'on de la cuerta fase del SDSS y contiene observaciones hasta Agosto de 2018. En \'el se incluyen los datos finales del espectro \'optico para oscilaciones de bariones, espectro infrarrojo, observaciones espectrosc\'opicas de la unidad decampo integral para galaxias cercanas y espectros estelares.% del Baryon Oscillation Survey Spectroscopic (eBOSS), datos m\'as recientes del espectro en infrarrojo del Apache Point Observatory Galaxy Evolution Experiment 2 (APOGEE-2), actualizaci\'on de los datos de las observaciones espectrosc\'opicas de la unidad de campo integral para galaxias cercanas del Mapping Nearby Galaxies at APO (MaNGA), los espectros m\'as actualizados del espectra estelar del MaNGA Stellar Library program (MaStar), una nueva herramienta para analizar los datos de MaNGA y las m\'as recientes im\'agenes procesadas y espectros del SDSS Legacy Survey.
+
+Los datos fueron obtenidos de CasJobs, usando el siguiente c\'odigo
+\begin{verbatim}
+SELECT
+ p.objid, p.ra, p.dec, 
+  p.dered_u as umag, p.dered_g as gmag,
+  p.dered_r as rmag, p.dered_i as imag, 
+  p.dered_z as zmag,
+  s.z_noqso as z
+FROM PhotoObj AS p
+  JOIN SpecObj AS s ON s.bestobjid = p.objid
+WHERE 
+  s.z_noqso > 0 
+  AND s.zWarning_noqso = 0
+  AND s.class = 'GALAXY'
+\end{verbatim}
+donde \textbf{ra} y \textbf{dec} son la ascensi\'on recta y la declinaci\'on respectivamente; \textbf{umag}, \textbf{gmag}, \textbf{rmag}, \textbf{imag} y \textbf{zmag} son las magnitudes de la funci\'on de dispersi\'on de puntos en los filtros \textbf{u} en ultravioleta, \textbf{g} y \textbf{r} en visible, \textbf{i} y \textbf{z} en infrarrojo; \textbf{z\_noqso} es el redshift pero que asegura que no existan mediciones del resdshift de qu\'asares en los datos y adem\'as se impone la condici\'on de que sea positivo;  \textbf{zWarning\_noqso} est\'a relacionado con la tasa de \'exito del redshift (confidence flags) y al ser cero indica que existe una clasificaci\'on espectrosc\'opica y una medici\'on del redshift confidente para qu\'asares; y finalmente \textbf{class='GALAXY'} nos asegura que la muestra est\'e compuesta solamente de galaxias.
+
+\subsection{Datos}
+
+La muestra descargada del cat\'alogo DR16, contine aproximadamente 700.000 galaxias con un redshift de hasta $z \sim 2$. Esta muestra, se descompuso en 10 bins respecto al redshift tal como se muestra en la Tabla \ref{tabla}. Usando la \eqref{dist} se caclul\'o la distancia entre las galaxias usando las coordenadas (Ra,Dec), generando un histograma y calculando as\'i el n\'umero de pares del cat\'alogo real $DD(r)$. Posteriormente, se mezcl\'o de forma aleatoria la columna de la declinaci\'on para obtener las distancias y n\'umero de pares entre el cat\'alogo real y aleatorio $DR(r)$ y finalmente se mezcl\'o tambi\'en la columna de ascenci\'on recta para generar un cat\'alogo completamente aleatorio y obtener el n\'umero de pares de dicho cat\'alogo $RR(r)$.
+\begin{table}[t]
+\begin{center}
+ \begin{tabular}{c  c}
+	bin & Rango de z\\ \hline
+	1  & 0   $<$ z $<$ 0.2  \\
+	2  & 0.2 $<$ z $<$ 0.4  \\
+	3  & 0.4 $<$ z $<$ 0.6  \\
+	4  & 0.6 $<$ z $<$ 0.8  \\
+	5  & 0.8 $<$ z $<$ 1.0  \\
+	6  & 1.0 $<$ z $<$ 1.2  \\
+	7  & 1.2 $<$ z $<$ 1.4  \\
+	8  & 1.4 $<$ z $<$ 1.6  \\
+	9  & 1.6 $<$ z $<$ 1.8  \\
+	10 & 1.8 $<$ z $<$ 2.1  \\
+ \end{tabular}
+ \caption{Rangos del redshift correspondientes a cada bin.}
+\label{tabla}
+\end{center}
+\end{table}
+
+
+\begin{equation}\label{dist}
+d=\arccos(\sin(\delta_1)\sin(\delta_2)+\cos(\delta_1)\cos(\delta_1)\cos(\alpha_1-\alpha_2))
+\end{equation}
+
+Esta distancia debe ser dividida por $H_0\,(1+z)$ para que resulte en una distancia com\'ovil.\\
+
+
+
+Una vez obtenidas las distancias, procedemos a calcular la funci\'on de correlaci\'on usando elestimador de Landy-Szalay \cite{landy} para cada uno de los 10 bins.
+
+\begin{equation}\label{corr}
+w(r)=\frac{DD(r)-2DR(r)+RR(r)}{RR(r)}
+\end{equation}
+
+Se prefiere este estimador por sobre otros debido a que necesita menos datos aleatorios y tiene mayor precisi\'on.
+
+\section{Resultados}
+
+A continuaci\'on se muestra el histograma para los 100 primeros datos del rango de redshift $0 < z < 0.2$, usando el c\'odigo fuente de \textit{Mathematica}.
+
+  \begin{center}
+   \includegraphics[width=45mm]{h1.png}\\
+   Figura 1.\emph{\ Cat\'alogo real.}
+  \end{center}
+  
+   \begin{center}
+   \includegraphics[width=45mm]{h2.png}\\
+   Figura 2.\emph{\ Cat\'alogo real-aleatorio.}
+  \end{center}
+  
+   \begin{center}
+   \includegraphics[width=45mm]{h3.png}\\
+   Figura3.\emph{\ Cat\'alogo aleatorio.}
+  \end{center}
+  
+  
+ Usando la \eqref{corr} se obtiene el siguiente gr\'afico
+ 
+  \begin{center}
+   \includegraphics[width=45mm]{w1.png}\\
+   Figura 4.\emph{\ Funci\'on de correlaci\'on en funci\'on de la distancia.}
+  \end{center}
+
+\section{Discusi\'on}
+
+\subsection{Limitaciones en las mediciones}
+Si bien el cat\'alogo tiene una cantidad de datos bastante alta, el an\'alisis de los datos no se pudo llevar a cabo de una manera \'optima. Por otro lado, si bien el SDSS utiliza fibras \'opticas que son de gran ayuda al momento de obtener mediciones simult\'aneas, tambi\'en conlleva un problema: las colisiones de fibra \cite{strauss}. Las fibras no se pueden poner demasiado juntas (debido al tamaño de los tapones) por lo que a una cantidad significante de galaxias no se le puede asignar una fibra y obtener as\'i mediciones del redshift. Este problema se puede corregir en parte superponiendo los platos, sin embargo, queda una regi\'on desprovista de mediciones.
+
+\subsection{Limitaciones en el an\'alisis}
+Una de las limitaciones del an\'alisis fue la extensi\'on del cat\'alogo aleatorio, puesto que ten\'ia la misma cantidad de datos que el cat\'alogo real. Teniendo esto en consideraci\'on, el gr\'afico de la funci\'on de correlaci\'on tuvo muchas incertezas estad\'isticas. 
+Usar una matriz de covarianza permite evaluar la detectabilidad de los lentes, efectos relativistas y el contenido de informaci\'on. Usar una matriz de este tipo es importante debido a que los pares vecinos est\'an fuertemente correlacionados y por lo tanto, permite obtener correlaci\'on entre cada bin \cite{sawangwit}.
+
+Otro aspecto a considerar, son las limitaciones del modelo de halo que difieren bastante de las mediciones obtenidas a partir de lentes gravitacionales.
+
+\section{Conclusiones}
+
+En este trabajo se intent\'o obtener la funci\'on de correlaci\'on y hacer un an\'alisis para obtenerla en funci\'on de dos leyes de potencias. Se seleccionaron 10 bins respecto al redshift y se midieron parte del primer bin y el \'ultimo. Con esto se obtuvo un histograma para ambas secciones de los datos, con sus respectivos n\'umeros de pares del cat\'alogo real, cat\'alogo aleatorio y una combinaci\'on de ambos. Posteriormente se us\'o un estimador para calcular la funci\'on de correlaci\'on.
+
+Al usar pocos datos y que el cat\'alogo aleatorio tenga la misma cantidad de datos que el real por lo que la incerteza es bastante grande. Adem\'as, no se logr\'o obtener el valor para la potencia de la funci\'on de correlaci\'on. Queda como ejercicio futuro lograr obtenerla.
+\bibliography{ref}
+%\bibliographystyle{estilo}
+
+
+
+
+\end{document}
